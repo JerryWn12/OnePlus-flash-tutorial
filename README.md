@@ -17,6 +17,10 @@
 \* 此阶段可选，若已经解锁 Bootloader 则可跳过此步，到
 [**第二步：打包 Boot，使用 MagiskRoot**](#二，打包-boot，使用-magiskRoot) 。已解锁 Bootloader 的明显特征是手机在开机时会有设备已解锁的提示。
 
+- 注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）
+- 注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）
+- 注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）
+
 解锁 Bootloader 是怎么回事呢？解锁 Bootloader 相信大家都很熟悉，但是解锁 Bootloader 是怎么回事呢，下面就让小编带大家一起了解吧。<br>解锁 Bootloader，其实就是用 **adb 工具** 解锁 Bootloader，大家可能会很惊讶 **adb 工具** 怎么解锁 Bootloader 呢？但事实就是这样，小编也感到非常惊讶。<br>这就是关于解锁 Bootloader 的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！
 
 咳咳，回到正题，下面是谷歌官方对 Bootloader 的介绍：
@@ -66,7 +70,7 @@
 
 使用 adb 工具有多种方法，我介绍其中两种：
 
-#### 方法一 ：配置环境变量后随地使用
+#### 方法一 ：配置环境变量后随地使用（建议）
 
 这些文件可以存放在任意地方 **（路径最好不要有中文）** ，将整个文件夹剪切至任意你想要的位置之后，点击文件资源管理器的地址栏，将路径复制下来，例如我的图片上的路径就是：
 
@@ -92,7 +96,7 @@
 
     fastboot help
 
-此时应出现 fastboot 的相关命令用法及其解释：
+回车，此时应出现 fastboot 的相关命令用法及其解释：
 
 ![fastboot help](./assets/屏幕截图%202021-02-07%20181840.png)
 
@@ -112,7 +116,7 @@
 
     fastboot help
 
-此时应出现 fastboot 的相关命令用法及其解释：
+回车，此时应出现 fastboot 的相关命令用法及其解释：
 
 ![fastboot help](assets/屏幕截图%202021-02-07%20230403.png)
 
@@ -120,17 +124,59 @@
 
 ### 使用解锁命令解锁
 
-解锁 Bootloader 是在 Fastboot 模式下进行的，所以，我们需要重启到 Fastboot 模式，在这里我也介绍两种方法：
+解锁 Bootloader 是在 Fastboot 模式下进行的，所以，我们需要重启到 <span id="Fastboot">Fastboot 模式<span>，在这里我也介绍两种方法：
 
-方法一： 在关机状态下，同时长按电源键和音量上键，即可进入 Fastboot 模式；
+方法一（建议）： 在关机状态下，同时长按电源键和音量上键，即可进入 Fastboot 模式；
 
 方法二： 首先，要开启开发者选项，开启开发者选项的方法[在这里](#DeveloperMode)，然后，进入开发者选项，开启 **“USB 调试”** 功能，如下图所示：
 
 ![USB调试](assets/Screenshot_20210208-205441_设置.png)
 
+将手机连接电脑，此时手机上会出现是否允许此计算机进行 USB 调试的对话框，勾选 **“一律允许......”** 后，点击 **“允许”** ：
+
+![允许USB调试](assets/Screenshot_20210208-225734_系统界面.png)
+
+然后根据[上面](#搭建-adb-工具)已经介绍过的方法打开命令行窗口（adb 工具），键入：
+
+    adb devices
+
+回车，应出现设备编号：
+
+![调试设备](assets/屏幕截图%202021-02-08%20225505.png)
+
+再次输入：
+
+    adb reboot bootloader
+
+回车，等待一段时间，即可将手机重启至 Fastboot 模式
+
+> 进入 Fastboot 的明显特征是屏幕上有红色的 **_Fastboot Mode_** 提示，并且使用音量增减键可以切换要执行的操作（关机，重启，进入恢复模式等）
+
+好了，使用以上任一方法进入 Fastboot 之后，回到我们的命令行窗口，键入：
+
+    fastboot devices
+
+回车，此时应出现设备编号：
+
+![Fastboot检验](assets/屏幕截图%202021-02-08%20233711.png)
+
+再次输入：
+
+    fastboot oem unlock
+
+- 注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）
+- 注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）
+- 注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）
+
+回车，此时根据提示，在手机上完成解锁 Bootloader 的操作（使用音量键选择是否确定解锁（选择 **Yes** 项）（如果反悔，不想解锁，或是想保护数据，选择 **No** 项），使用电源键确认选项）
+
+大功告成，现在你已经完成了搞机的第一步：解锁 Bootloader 了，现在，你可以歇一歇，欣赏一下开机时的已解锁 Bootloader 的提示。
+
 ## 二，打包 Boot，使用 MagiskRoot
 
 \* 此阶段可选，若会打包 Boot 后刷入以使用 Magisk 则可跳过此步，到 [**第三步：备份指纹分区**](#三，备份指纹分区) 。
+
+### 提取 Boot
 
 既然我们已经解锁了 Bootloader ，那就意味着我们可以对 `Boot` 分区进行修改啦！那我们首先得把 Boot.img 文件提取出来，Boot.img 文件是在 Payload.bin 的解压文件里面，而 Payload.bin 则可以通过解压固件包获得，也就是说，我们需要：
 
@@ -184,6 +230,8 @@
 
 英语好的也可以阅读 Readme.txt 查看用法和注意事项。
 
+### 使用 Magisk Patch Boot
+
 Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手机上安装 Magisk 应用，把电脑上解压出来的 Boot.img 文件传输到手机上，打开 Magisk ，选择上面的 `“安装”` ，注意一定是 **上面** 的安装按钮，也就是 `Magisk` 的按钮，而不是 `Manager` 的按钮，如下图所示（界面可能因为版本或安装与否而不同）：
 
 ![安装按钮](assets/Screenshot_20210208-170522_Magisk_Manager.png)
@@ -202,10 +250,38 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 ![前后Boot对比](assets/Screenshot_20210208-170656_文件极客.png)
 
-大功告成，我们已经获得了被 Magisk 修改过的 Boot.img 文件，那么接下来，我们就要把打包好的 **magisk_patched_xxx.img** 刷入手机，获得 Root 权限。
+大功告成，我们已经获得了打包好的 **magisk_patched_xxx.img** 文件。
 
-首先，要开启开发者选项，开启开发者选项的方法在前面已经叙述，然后，进入开发者选项，开启 **“USB 调试”** 功能，如下图所示：
+### 刷入已打包的 Boot
 
-![USB调试](assets/Screenshot_20210208-205441_设置.png)
+那么接下来，我们就要把打包好的 **magisk_patched_xxx.img** 刷入系统的 `Boot` 分区，来获得 Root 权限。
+
+首先，要[进入 Fastboot 模式](#Fastboot)，输入：
+
+    fastboot flash boot <magisk_patched_xxx.img所在位置>
+
+这个\< magisk_patched_xxx.img 所在位置 >需特别注意，假设，我的已打包的 Boot 文件名字为：`magisk_patched_abc.img` ，存放在 D 盘根目录下面，那么命令是这样：
+
+    fastboot flash boot D:\magisk_patched_abc.img
+
+其实，还有更便捷的方法，先输入：
+
+    fastboot flash boot<空格>
+
+> 注意 boot 后面有个空格，为方便显示，我这里用 <空格> 进行代替，结合前面的示例应该容易理解
+
+然后，找到复制到电脑上的 **Magisk 打包过的 magisk_patched_xxx.img 文件**，将其用鼠标拖进命令行窗口里面，此时会自动输入拖进去的文件的绝对路径，省去了输入路径的操作
+
+命令输入完毕后，回车，等待一段时间即可刷入 Boot.img 文件到设备的 Boot 分区内，窗口会显示刷入所用时间等等，刷入完毕后输入：
+
+    fastboot reboot
+
+回车即可进入系统，或者在手机上用音量键选择 **START** 一项，按电源键确认，也可以重启系统
+
+大功告成，在手机上安装 MagiskManager 即可管理 Root 权限了。
 
 ## 三，备份指纹分区
+
+- 强烈建议：此步骤不要跳过
+- 强烈建议：此步骤不要跳过
+- 强烈建议：此步骤不要跳过
