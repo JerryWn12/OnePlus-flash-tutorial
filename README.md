@@ -2,7 +2,7 @@
 
 ## 注意事项
 
-- 此教程暂只支持 **一加 8** 刷入 **Havoc OS** ，后续（可能）会支持更多机型或 rom，非 **一加 8** 刷入 **Havoc OS** 的请勿轻易使用本教程尝试！！!
+- 此教程暂只支持 **一加 8** 刷入 **Havoc OS** ，后续（可能）会支持更多机型或 ROM，非 **一加 8** 刷入 **Havoc OS** 的请勿轻易使用本教程尝试！！!
 
 - 手机变砖不要慌， ~~拿出手机拍个朋友圈儿\~\~~~ ，搞机有风险，刷机需谨慎。
 
@@ -14,9 +14,10 @@
 
 ## 一， 解锁 Bootloader
 
-\* 此阶段可选，若已经解锁 Bootloader 则可跳过此步，到第三步：备份指纹分区，已解锁 Bootloader 的明显特征是手机在开机时会有设备已解锁的提示。
+\* 此阶段可选，若已经解锁 Bootloader 则可跳过此步，到
+[**第二步：打包 Boot，使用 MagiskRoot**](#二，打包-boot，使用-magiskRoot) 。已解锁 Bootloader 的明显特征是手机在开机时会有设备已解锁的提示。
 
-解锁 Bootloader 是怎么回事呢？解锁 Bootloader 相信大家都很熟悉，但是解锁 Bootloader 是怎么回事呢，下面就让小编带大家一起了解吧。<br>解锁 Bootloader，其实就是用 adb 工具解锁 Bootloader，大家可能会很惊讶 adb 工具怎么会解锁 Bootloader 呢？但事实就是这样，小编也感到非常惊讶。<br>这就是关于解锁 Bootloader 的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！
+解锁 Bootloader 是怎么回事呢？解锁 Bootloader 相信大家都很熟悉，但是解锁 Bootloader 是怎么回事呢，下面就让小编带大家一起了解吧。<br>解锁 Bootloader，其实就是用 **adb 工具** 解锁 Bootloader，大家可能会很惊讶 **adb 工具** 怎么解锁 Bootloader 呢？但事实就是这样，小编也感到非常惊讶。<br>这就是关于解锁 Bootloader 的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！
 
 咳咳，回到正题，下面是谷歌官方对 Bootloader 的介绍：
 
@@ -32,6 +33,11 @@
 
 看到最后一段我们知道，引导加载程序（Bootloader）会验证 `boot` 分区和 `recovery` 分区的完整性，而 Magisk Root 就是通过修改 `Boot` 镜像来达到目的的，所以我们只要解锁了 Bootloader 就可以尽情玩耍啦！
 
+首先，我们要打开手机上的 **OEM 解锁** 选项来允许 Bootloader 可以被解锁，步骤如下：
+
+1. <span id="DeveloperMode">进入设置-关于手机</span>，连续点击版本号，直到出现 **“处于开发者模式”** 或之类的提示（可能会要求输入 PIN，即锁屏密码）；
+2. 然后，进入设置-系统-开发者选项，找到 **OEM 解锁** （ 也可以直接在设置里面搜索 “OEM 解锁” ），将其打开。
+
 那么我们要如何解锁 Bootloader 呢？其实只需要一条命令就行啦：
 
     fastboot oem unlock
@@ -43,28 +49,32 @@
 >
 >       fastboot flashing unlock
 >
-> 关于两者的区别，我也翻阅了许多资料，还是没能总结出这两条命令的功能的不同之处，希望知道两者区别的大佬帮忙 **contribute** 一下，谢谢啦！（我也不懂 Github 怎么贡献代码 T_T
+> [Source](https://source.android.com/setup/build/running)
+>
+> 关于两者的区别，我也翻阅了许多资料，没能看出两条命令的功能的不同之处 T_T
+
+### 搭建 adb 工具
 
 那么，我们应该到哪里输入命令？那么这时候就要介绍一个谷歌官方的 _Android SDK Platform-Tools_ 啦！这也是我们俗称的 **adb** 工具，里面集成了 **adb** 和 **fastboot** 命令，点击下面的任一链接即可下载
 
-- [官方链接（需要科学上网)](https://developer.android.com/studio/releases/platform-tools)
+- [官方链接](https://developer.android.com/studio/releases/platform-tools)
 - [蓝奏云](https://jerrywn.lanzous.com/iA9jLlfseyh)
 
-下载完之后解压，打开解压后的文件夹，我们会看见这些：
+下载完成后解压，打开解压后的文件夹，我们会看见这些：
 
 ![解压后文件夹](./assets/屏幕截图%202021-02-07%20170353.png)
 
 使用 adb 工具有多种方法，我介绍其中两种：
 
-### 方法一 ：配置环境变量后随地使用
+#### 方法一 ：配置环境变量后随地使用
 
 这些文件可以存放在任意地方 **（路径最好不要有中文）** ，将整个文件夹剪切至任意你想要的位置之后，点击文件资源管理器的地址栏，将路径复制下来，例如我的图片上的路径就是：
 
     D:\Download\Compressed\platform-tools_r30.0.5-windows\platform-tools
 
-注意路径结尾一定是 `platform-tools` 除非你更改了解压后的文件夹名称。
+注意路径结尾一定是 `platform-tools` ，除非你更改了解压后的文件夹名称。
 
-然后我们需要对 **_环境变量_** 进行配置：Windows10 系统中，使用快捷键 `Windows + S` 打开搜索工具，键入 `PATH` 点击最佳匹配中的 **“编辑系统环境变量”** ，如下图所示：
+然后我们需要对 **_环境变量_** 进行配置：Windows10 系统中，使用快捷键 `Windows + S` 打开搜索工具，键入 `path` 点击最佳匹配中的 **“编辑系统环境变量”** ，如下图所示：
 
 ![搜索](./assets/屏幕截图%202021-02-07%20222601.png)
 
@@ -92,7 +102,7 @@
 
 则应检查环境变量有没有正确配置完成。若仍无效，请尝试使用方法二 。
 
-### 方法二 ：就地使用
+#### 方法二 ：就地使用
 
 在解压后的文件夹里面，按住 **Shift** 键在文件夹内空白处右键，菜单里面就会增加 **“在此处打开 PowerShell 窗口”** 一项，如下图所示：
 
@@ -108,11 +118,19 @@
 
 若仍无效，请尝试使用方法一 。
 
-### 至此，解锁 Bootloader 阶段完成
+### 使用解锁命令解锁
+
+解锁 Bootloader 是在 Fastboot 模式下进行的，所以，我们需要重启到 Fastboot 模式，在这里我也介绍两种方法：
+
+方法一： 在关机状态下，同时长按电源键和音量上键，即可进入 Fastboot 模式；
+
+方法二： 首先，要开启开发者选项，开启开发者选项的方法[在这里](#DeveloperMode)，然后，进入开发者选项，开启 **“USB 调试”** 功能，如下图所示：
+
+![USB调试](assets/Screenshot_20210208-205441_设置.png)
 
 ## 二，打包 Boot，使用 MagiskRoot
 
-\* 此阶段可选，若会打包 Boot 后刷入以使用 Magisk 则可跳过此步，到第三步：备份指纹分区。
+\* 此阶段可选，若会打包 Boot 后刷入以使用 Magisk 则可跳过此步，到 [**第三步：备份指纹分区**](#三，备份指纹分区) 。
 
 既然我们已经解锁了 Bootloader ，那就意味着我们可以对 `Boot` 分区进行修改啦！那我们首先得把 Boot.img 文件提取出来，Boot.img 文件是在 Payload.bin 的解压文件里面，而 Payload.bin 则可以通过解压固件包获得，也就是说，我们需要：
 
@@ -137,8 +155,8 @@
 
 出现了 `有效数据包含额外数据` 的警告，这个警告是怎么回事呢，其实我也不知道，那么在这里我们需要用到一个工具：**Payload Dumper** ，所谓 Payload Dumper，就是专门解压 Payload.bin 的工具啦！在下面的链接可以下载：
 
-- [蓝奏云](https://jerrywn.lanzous.com/isZxKlh0yli)
 - [Android File Host](https://androidfilehost.com/?fid=818070582850510260)
+- [蓝奏云](https://jerrywn.lanzous.com/isZxKlh0yli)
 
 下载完成后解压我们得到一个文件夹：`payload_dumper-win64` ，进入文件夹后如下图：
 
@@ -156,7 +174,7 @@
 1. 把 Payload.bin 粘贴至 `payload_input` 文件夹里面；
 2. 双击 `payload_dumper.exe` 等待解压完成；
 
-   > 在这一步，其实不用等待整个 Payload.bin 文件解压完毕，除非你需要除 Boot.img 之外的其他 img 文件，只要出现 Boot 字样，并且 Boot 字样下面还有除零之外的任意个其它内容，即可关闭窗口结束解压进程，如下图所示：
+   > 在这一步，其实不用等待整个 Payload.bin 文件解压完毕，除非你需要除 Boot.img 之外的其他 img 文件，只要出现 Boot 字样，并且 Boot 字样下面还有除零之外的任意个其它内容，即可关闭窗口以结束解压进程，如下图所示：
    >
    > ![提前结束](assets/屏幕截图%202021-02-08%20164837.png)
    >
@@ -178,10 +196,16 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 ![点击安装](assets/Screenshot_20210208-170624_Magisk_Manager.png)
 
-点击开始后，会自动对 Boot.img 文件进行打包，打包完成后，会自动在原 Boot.img 文件的所在文件夹创建一个新的 Boot_magisk_patched_xxx.img 文件，如下图所示：
+点击开始后，会自动对 Boot.img 文件进行打包，打包完成后，会自动在原 Boot.img 文件的所在文件夹创建一个新的 **magisk_patched_xxx.img** 文件，如下图所示：
 
 ![打包过程](assets/Screenshot_20210208-170638_Magisk_Manager.png)
 
 ![前后Boot对比](assets/Screenshot_20210208-170656_文件极客.png)
 
-大功告成，我们已经获得了被 Magisk 修改过的 Boot.img 文件，那么接下来，我们就要把 Boot.img 刷入手机，获得 Root 权限。
+大功告成，我们已经获得了被 Magisk 修改过的 Boot.img 文件，那么接下来，我们就要把打包好的 **magisk_patched_xxx.img** 刷入手机，获得 Root 权限。
+
+首先，要开启开发者选项，开启开发者选项的方法在前面已经叙述，然后，进入开发者选项，开启 **“USB 调试”** 功能，如下图所示：
+
+![USB调试](assets/Screenshot_20210208-205441_设置.png)
+
+## 三，备份指纹分区
