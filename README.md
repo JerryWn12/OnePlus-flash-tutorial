@@ -6,7 +6,7 @@
 
 [事前准备](#事前准备)
 
-[一，解锁 Bootloader](#一，解锁-bootloader)
+[一，解锁 Bootloader](#Unlock-BL)
 
 - [搭建 adb 工具](#搭建-adb-工具)
 - [使用解锁命令解锁](#使用解锁命令解锁)
@@ -35,7 +35,7 @@
 
 ## 一，解锁 Bootloader
 
-\* 此阶段可选，若已经解锁 Bootloader 则可跳过此步，到
+\* <span id="Unlock-BL">此阶段可选</span>，若已经解锁 Bootloader 则可跳过此步，到
 [**第二步：打包 Boot，使用 MagiskRoot**](#二，打包-Boot，使用-MagiskRoot) 。已解锁 Bootloader 的明显特征是手机在开机时会有设备已解锁的提示。
 
 - **注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）**
