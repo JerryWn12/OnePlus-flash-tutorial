@@ -91,7 +91,7 @@
 
 下载完成后解压，打开解压后的文件夹，我们会看见这些：
 
-![解压后文件夹](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ7h9VJDQKBZsD*s*GyVQVQS0yMIZvtAbRGZ1Rw2UwT4gPXrWnIype5P*sszSnwYE00!/r)
+![解压后文件夹](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ7h9VJDQKBZsD*s*GyVQVQS0yMIZvtAbRGZ1Rw2UwT4gHzRUTbomn*H.ENTXUiKi0c!/r)
 
 使用 adb 工具有多种方法，我介绍其中两种：
 
