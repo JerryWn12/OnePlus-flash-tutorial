@@ -11,7 +11,7 @@
 - [搭建 adb 工具](#搭建-adb-工具)
 - [使用解锁命令解锁](#使用解锁命令解锁)
 
-[二，打包 Boot，使用 MagiskRoot](#二，打包-Boot，使用-MagiskRoot)
+[二，打包 Boot，使用 MagiskRoot](#MagiskRoot)
 
 - [提取 Boot](#提取-Boot)
 - [使用 Magisk Patch Boot](#使用-Magisk-Patch-Boot)
