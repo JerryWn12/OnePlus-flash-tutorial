@@ -6,7 +6,7 @@
 
 [事前准备](#事前准备)
 
-[一，解锁 Bootloader](#一，解锁-Bootloader)
+[一，解锁 Bootloader](#一，解锁-bootloader)
 
 - [搭建 adb 工具](#搭建-adb-工具)
 - [使用解锁命令解锁](#使用解锁命令解锁)
