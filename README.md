@@ -105,15 +105,15 @@
 
 然后我们需要对 **_环境变量_** 进行配置：Windows10 系统中，使用快捷键 `Windows + S` 打开搜索工具，键入 `path` 点击最佳匹配中的 **“编辑系统环境变量”** ，如下图所示：
 
-![搜索](./assets/屏幕截图%202021-02-07%20222601.png)
+![搜索](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ7lSa2VWAfWGJVNp.uX.w7o1d8ShvrOC4sHIsDkLkUOBPws4e47G5bCInOcJw7ULEg!/r)
 
 在打开的窗口中选择 **“环境变量”** 一项，再找到下面那栏系统变量中的变量名为 **Path** 的项，如下图所示：
 
-![环境变量](<./assets/屏幕截图(18).png>)
+![环境变量](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcdRBCa1DxzpqhIFn3sYiAnudZHkMISdryF8HH22M6JMML8UP5ieU2xII6qo17OvkbpyQiuqXi.cGvZWqVm2C9Hs!/r)
 
 双击这个 **Path** 项，在打开的窗口中点击右侧的 **新建** ，然后在输入框中粘贴刚刚复制的文件夹地址，点击确定，如下图所示：
 
-![新建Path项](<assets/屏幕截图(19).png>)
+![新建Path项](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcdRBCa1DxzpqhIFn3sYiAnt*v5lGR0mCaZxqa41ih8RJ49RBj0fQd2zHboKTzrSSeZXRuWjRp7gM5mXn8dA*o4Q!/r)
 
 此时环境变量搭建完成。
 
@@ -123,7 +123,7 @@
 
 回车，此时应出现 fastboot 的相关命令用法及其解释：
 
-![fastboot help](./assets/屏幕截图%202021-02-07%20181840.png)
+![fastboot help](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ4q8kPprI9WC51va1zkGR5juW5xQLJIRbRwo701JvcYMnzGSE8cFhLEGFEsM6hFj5g!/r)
 
 若出现的是形如：
 
@@ -137,7 +137,7 @@
 
 <span id="Use-Now">在解压后的文件夹里面</span>，按住 **Shift** 键在文件夹内空白处右键，菜单里面就会增加 **“在此处打开 PowerShell 窗口”** 一项，如下图所示：
 
-![右键菜单](./assets/屏幕截图%202021-02-07%20225901.png)
+![右键菜单](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcXveMfGdv0SGX8tmIpKc5wYwSYI3A2zGMio6SDjqSbLT2CtuTJ4NarH7DP.e8*S8b1kT4IrbP6Aw*6v6e8dNX*I!/r)
 
 选择此项，即可打开命令行窗口，同样地，键入：
 
@@ -145,7 +145,7 @@
 
 回车，此时应出现 fastboot 的相关命令用法及其解释：
 
-![fastboot help](assets/屏幕截图%202021-02-07%20230403.png)
+![fastboot help](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcXveMfGdv0SGX8tmIpKc5wbwxStnFJOYcLcp4ghAHgrVT7e03FIiQID6bFU1XO*f5qc1nz1EoBy8JexTSk4g.zk!/r)
 
 若仍无效，请尝试使用方法一 。
 
@@ -159,11 +159,11 @@
 
 **方法二**： 首先，要开启开发者选项里面的 **“USB 调试”** 功能，如下图所示：
 
-![USB调试](assets/Screenshot_20210208-205441_设置.png)
+![USB调试](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcSPB2zyFNNnIr7xUByEoBf3Ata*X09Rtkv1NVdJsczJSVqEGzylrYCKqYN51dkeWPwHyeJKRgzYICeJ*faa97z8!/r)
 
 将手机连接电脑，此时手机上会出现是否允许此计算机进行 USB 调试的对话框，勾选 **“一律允许......”** 后，点击 **“允许”** ：
 
-![允许USB调试](assets/Screenshot_20210208-225734_系统界面.png)
+![允许USB调试](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcSPB2zyFNNnIr7xUByEoBf1MKpKN4BU2e4E9oGl0zTPWCiGg5BO*WzL4UnMPE*T7hquZ8kg0dGOvVdVb0A4mUXk!/r)
 
 然后根据[上面](#搭建-adb-工具)已经介绍过的方法打开命令行窗口（adb 工具），键入：
 
@@ -171,7 +171,7 @@
 
 回车，应出现设备编号：
 
-![调试设备](assets/屏幕截图%202021-02-08%20225505.png)
+![调试设备](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcTEVXpEFWnelDRDmHgCvEWykfRj26VmeczCisTjS3AP27svDia3DJGD9ygNY8yeH7XquxHddmepHqZqOWsSTB*w!/r)
 
 再次输入：
 
@@ -187,7 +187,7 @@
 
 回车，此时应出现设备编号：
 
-![Fastboot检验](assets/屏幕截图%202021-02-08%20233711.png)
+![Fastboot检验](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcTEVXpEFWnelDRDmHgCvEWxBOxAhnLQFSbkdCdJjvOYdRTftPNYHuRP6AI0ha5dWTjD4dwfluTxzM7g4OnRN1aQ!/r)
 
 再次输入：
 
@@ -222,11 +222,11 @@
 - **Payload.bin**
 - payload_properties.txt
 
-![固件包解压文件](./assets/屏幕截图%202021-02-08%20143326.png)
+![固件包解压文件](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcXveMfGdv0SGX8tmIpKc5wZlwmzY1bqDYwmAQkG*gRQ1lTRNFQhqcJ089FylGdPQebgQ512kw1srRWeApGhFMUY!/r)
 
 在这里，Payload.bin 就是我们需要的文件啦！再次选中 Payload.bin 文件进行解压，这时发现：
 
-![解压错误](assets/屏幕截图%202021-02-08%20144541.png)
+![解压错误](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcXveMfGdv0SGX8tmIpKc5wZ0jWtnOv.RGk6QoWR.CnRVdGLHclAqOeN95YuJJM6jEwpjZ7RA3MTgTCt936PSPuw!/r)
 
 出现了 `有效数据包含额外数据` 的警告，这个警告是怎么回事呢？其实我也不知道。那么在这里我们需要用到一个工具：**Payload Dumper** ，所谓 Payload Dumper，就是专门解压 Payload.bin 的工具啦！在下面的链接可以下载：
 
@@ -235,7 +235,7 @@
 
 下载完成后解压我们得到一个文件夹：`payload_dumper-win64` ，进入文件夹后如下图：
 
-![PayloadDumper](assets/屏幕截图%202021-02-08%20163420.png)
+![PayloadDumper](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcTEVXpEFWnelDRDmHgCvEWwoWcVXszNDbQYA5E3.kUVarGR4.6Fm*gaXVrph*66TzQ6Oe0n60eK5LlLKU9n9zFk!/r)
 
 还记得我们解压固件包得到的 **Payload.bin** 文件吗？在这里：
 
@@ -251,7 +251,7 @@
 
    > 在这一步，其实不用等待整个 Payload.bin 文件解压完毕，除非你需要除 Boot.img 之外的其他 img 文件，只要出现 Boot 字样，并且 Boot 字样下面还有除零之外的任意个其它内容，即可关闭窗口以结束解压进程，如下图所示：
    >
-   > ![提前结束](assets/屏幕截图%202021-02-08%20164837.png)
+   > ![提前结束](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcTEVXpEFWnelDRDmHgCvEWxLh*lOwPtVrYZuAJPamiw0r1dHZ125wM64XgmnfY0ILuqnFxJMOgFcunt7ZQdZcdo!/r)
    >
    > 此时整个 Payload.bin 文件并未解压完毕，也可以关闭窗口。
 
@@ -263,21 +263,21 @@
 
 Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手机上安装 Magisk 应用，把电脑上解压出来的 Boot.img 文件传输到手机上，打开 Magisk ，选择上面的 `**安装**` ，注意一定是 **上面** 的安装按钮，也就是 `**Magisk**` 的按钮，而不是 `**Manager**` 的按钮，如下图所示（界面可能因为版本或安装与否而不同）：
 
-![安装按钮](assets/Screenshot_20210208-170522_Magisk_Manager.png)
+![安装按钮](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcQWvQZXHIz2mekI7FxSEdfEbDyXD.3EYGbm6gpEtO5S8hpNruocI6HBbs1iExoG83Np7BucDfffkI4wyNzeSoHY!/r)
 
 然后选择 **“选择并修补一个文件”** 一项，如下图所示（界面可能因为版本或安装与否而不同）：
 
-![选择项](assets/Screenshot_20210208-170610_Magisk_Manager.png)
+![选择项](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcQWvQZXHIz2mekI7FxSEdfGKcUb4q7Ebc.rTCRDnA4jovLUN.UwWDHqNpvTbypzuNEFf8Sy7iX0KdyQlCzh*tl0!/r)
 
 点击后，会弹出文件选择器，选择刚刚传输至手机上的 Boot.img 文件，选择完成后，会自动回到 Magisk 应用界面，此时右上角 `开始` 按钮变为可点击状态， 如下图所示（界面可能因为版本或安装与否而不同）：
 
-![点击安装](assets/Screenshot_20210208-170624_Magisk_Manager.png)
+![点击安装](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcQWvQZXHIz2mekI7FxSEdfHP1sAq9x8WUR1mlUR9rKQhdTCaBHBKYqtDFnuqAXcIWabW8cmN8qgInTuWmYrrDck!/r)
 
 点击开始后，会自动对 Boot.img 文件进行打包，打包完成后，会自动在原 Boot.img 文件的所在文件夹创建一个新的 **magisk_patched_xxx.img** 文件，如下图所示：
 
-![打包过程](assets/Screenshot_20210208-170638_Magisk_Manager.png)
+![打包过程](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcQWvQZXHIz2mekI7FxSEdfGs7TJ2oU4xP0Lh22qfdOwZcUboGYjH*qX4i93QUMcOj0GizqFIKrD5Pmw94uVc6iM!/r)
 
-![前后Boot对比](assets/Screenshot_20210208-170656_文件极客.png)
+![前后Boot对比](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcSPB2zyFNNnIr7xUByEoBf3wGqE4iH7GQ4e9I0VvLUUjcYYcE69ZJZqtVfWaXv21KkNIguNUaYJEa9T70gY0kwM!/r)
 
 大功告成，我们已经获得了打包好的 **magisk_patched_xxx.img** 文件。
 
@@ -323,11 +323,11 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 回车，即可出现机型和"$"字样，如图所示：
 
-![adbshell](assets/屏幕截图%202021-02-09%20135705.png)
+![adbshell](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcZiPZbTPFjsiEElwTn8h3YTqRVYFFoCxkx2bpIHpmAVyBIjy7nHGy5m2ewdOzwmUZCVwciSNoxR.7X8tBhRJkTE!/r)
 
 再次输入 `su` ，回车，手机上会出现 root 权限申请，点击允许：
 
-![root请求](assets/Screenshot_20210209-140057_Magisk_Manager.png)
+![root请求](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcSPB2zyFNNnIr7xUByEoBf2PdLaB2fSumwpkiFbX7xokloXAqkUfryJCtE3*WXtio60Ya7FXCGda3MXf4cQxwz8!/r)
 
 之后，命令行窗口的 `$` 号会变成 `#` 号，这就说明是在 root 权限下进行，再次输入：
 
@@ -337,7 +337,7 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 回车，稍侯片刻，出现总执行时间的提示则表示备份完成，此时，即可在手机**内部存储根目录**下找到备份好的 persist.img 文件：
 
-![备份完成](assets/Screenshot_20210209-140314_文件极客.png)
+![备份完成](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ6I*oQhqNYF6ZsnZjjbiDW7UvNzot*o4X7Jd*O*4PAcbakcyzXqeZB8hvJscWh6uK0!/r)
 
 好了，此时指纹分区已经备份完成，你可以将其上传到云端存储或保存至本地硬盘以确保不会丢失，以后如果真的遇到了指纹模块不能使用的情况，可以使用这次备份出来的 persist.img 文件恢复指纹分区，具体操作我也不知道 😅。
 
@@ -357,15 +357,15 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 然后根据之前讲过的 [提取 Boot](#提取-Boot) 的方法，提取出固件内的所有 img 文件，即让它自动全部提取完成，不要手动关闭窗口，完成后命令行窗口会自动关闭，提取出的 img 文件如下图：
 
-![解压完成](assets/屏幕截图%202021-02-09%20152838.png)
+![解压完成](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcZiPZbTPFjsiEElwTn8h3YQdSPpBgHrYAwd*.wMFV0a3juefLvYm9EsPcQSo0fn0gu04x7Pb*JLLdnFiwncRDcA!/r)
 
 然后，把解压出的所有 img 文件复制进 **adb 工具所在文件夹**里面，也就是这样：
 
-![adb工具文件夹](assets/屏幕截图%202021-02-09%20220933.png)
+![adb工具文件夹](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcZiPZbTPFjsiEElwTn8h3YTSa.RF4iHL4KZPqa5A2skNR2Jm8.UW9xcMmSbiqj5KcUhSZiPlRUHhzed1R55n3eM!/r)
 
 然后，根据上面提及的[方法二](#Use-Now)打开命令行窗口，也就是在文件夹内空白处按住 Shift 点击右键，选择在此处打开 PowerShell 窗口，打开完成后如下图：
 
-![PowerShell](assets/屏幕截图%202021-02-09%20221301.png)
+![PowerShell](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcZiPZbTPFjsiEElwTn8h3YQd9LKp9fMZhwMi.sejGlyhnaJ0q4ffqfKHRJeS04tnM6lBPGU2ukMJHCNbzlLmKLc!/r)
 
 将手机[重启至 Fastboot 模式](#Fastboot)后连接电脑，复制以下命令至命令行窗口：
 
