@@ -23,7 +23,7 @@
 
 ## 注意事项
 
-- 此教程暂只支持 **一加 8** 刷入 **Havoc OS** ，后续（可能）会支持更多机型或 ROM，非 **一加 8** 刷入 **Havoc OS** 的请勿轻易使用本教程尝试！！!
+- 此教程暂只支持 **一加 8** 刷入 **Havoc OS** ，后续（可能）会支持更多机型或 ROM，非 **一加 8** 刷入 **Havoc OS** 的请勿轻易使用本教程尝试！！！
 
 - 手机变砖不要慌， ~~拿出手机拍个朋友圈儿\~\~~~ ，搞机有风险，刷机需谨慎。
 
@@ -91,7 +91,7 @@
 
 下载完成后解压，打开解压后的文件夹，我们会看见这些：
 
-![解压后文件夹](./assets/屏幕截图%202021-02-07%20170353.png)
+![解压后文件夹](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ7h9VJDQKBZsD*s*GyVQVQS0yMIZvtAbRGZ1Rw2UwT4gPXrWnIype5P*sszSnwYE00!/r)
 
 使用 adb 工具有多种方法，我介绍其中两种：
 
