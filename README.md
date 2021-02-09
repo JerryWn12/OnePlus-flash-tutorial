@@ -320,3 +320,49 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 好了，此时指纹分区已经备份完成，你可以将其上传到云端存储或保存至本地硬盘以确保不会丢失，以后如果真的遇到了指纹模块不能使用的情况，可以使用这次备份出来的 persist.img 文件恢复指纹分区，具体操作我也不知道 😅。
 
+## 四，刷入自定义 ROM
+
+好了，终于到了最激动人心的时刻，刷写第三方 ROM 了，这里，我使用 Havoc OS 进行演示，刷入其它系统的**请勿**轻易使用本方法，因为各种原因，各个 ROM 的刷入方法可能不同。
+
+在刷入 Havoc OS 之前有几个要求：
+
+1. 确保刷入 Havoc OS 之前，槽 a 和槽 b 均为官方氢或氧的 11 系统，若不确定，则下载最新官方 11 系统包进行**两次**本地升级（建议）；
+2. 从官方系统转到 Havoc OS 需要进行格式化，请注意您的数据（照片，音乐，应用等）。
+
+在这里，我们下载所对应机型 Havoc OS 的固件包（根据机型下载）：
+
+- [文叔叔（暂只提供一加 8 的 Havoc OS）](https://ws28.cn/f/4ob2eysk00c)
+- [Mega（含 8，8Pro 和 8T）](https://mega.nz/folder/ITAzSCQT#vW3tGYdCfYQ2pcmDcQmveA)
+
+然后根据之前讲过的提取 Boot 的方法，提取出固件内的所有 img 文件，即让它自动全部提取完成，完成后命令行窗口会自动关闭，提取出的 img 文件如下图：
+
+![解压完成](assets/屏幕截图%202021-02-09%20152838.png)
+
+然后，把解压出的所有 img 文件复制进 adb 工具所在文件夹里面，也就是这样：
+
+![adb工具文件夹](assets/屏幕截图%202021-02-09%20220933.png)
+
+然后，根据上面提及的[方法二](#方法二-：就地使用)打开命令行窗口，也就是在文件夹内空白处按住 Shift 点击右键，选择在此处打开 PowerShell 窗口，打开完成后如下图：
+
+![PowerShell](assets/屏幕截图%202021-02-09%20221301.png)
+
+将手机重启至 Fastboot 模式后连接电脑，复制以下命令：
+
+    fastboot flash recovery recovery.img
+    fastboot reboot fastboot
+    fastboot flash boot boot.img
+    fastboot flash dtbo dtbo.img
+    fastboot flash system system.img
+    fastboot flash system_ext system_ext.img
+    fastboot flash product product.img
+    fastboot flash vendor vendor.img
+    fastboot flash odm odm.img
+    fastboot --disable-verity flash vbmeta vbmeta.img
+    fastboot --disable-verity flash vbmeta_system vbmeta_system.img
+
+此时命令会自动执行（最后一条命令可能需要手动按回车键来执行），执行完毕后 Havoc OS 已经安装到你的手机上了，但是，如果上个系统是官方 H2OS 或 OOS 系统，在进入 Havoc OS 之前需要先进行格式化，具体方法是：
+
+1. 在命令行输入 `fastboot reboot recovery` 回车，此时手机进入 recovery （恢复）模式；
+2. 在手机上点击 `Enter recovery` ，然后点击 `Factory reset` 进行格式化，完毕后点击带有 `Reboot system` 字样的按钮即可开机。
+
+此时 Havoc OS 成功安装，要想安装 Magisk 则可以通过上面提到的：[二，打包 Boot，使用 MagiskRoot](#二，打包-Boot，使用-MagiskRoot)来安装 Magisk。
