@@ -63,7 +63,7 @@
 
 ### 搭建 adb 工具
 
-那么，我们应该到哪里输入命令？那么这时候就要介绍一个谷歌官方的 **_Android SDK Platform-Tools_** 啦！这也是我们俗称的 **adb 工具**，里面集成了 **adb** 和 **fastboot** 命令，点击下面的任一链接即可下载
+那么，我们应该到哪里输入命令？那么这时候就要介绍一个谷歌官方的 **_Android SDK Platform-Tools_** 啦！这也是我们俗称的 **adb 工具**，里面集成了 **adb** 和 **fastboot** 命令，点击下面的任一链接即可下载：
 
 - [官方链接](https://developer.android.com/studio/releases/platform-tools)
 - [蓝奏云](https://jerrywn.lanzous.com/iA9jLlfseyh)
@@ -110,7 +110,7 @@
 
 则应检查环境变量有没有正确配置完成。若仍无效，请尝试使用方法二 。
 
-> 配置环境变量之后，以后只需要打开 cmd 即可使用 adb 工具，无需再次配置环境变量。缺点是如果移动了 adb 工具的文件夹，则需要重新配置
+> 配置环境变量之后，以后只需要打开 cmd 即可使用 adb 工具，无需再次配置环境变量。缺点是如果移动了 adb 工具的文件夹，则需要重新配置。
 
 #### 方法二 ：就地使用
 
@@ -128,13 +128,13 @@
 
 若仍无效，请尝试使用方法一 。
 
-> 这种方法的弊端在于每次需要使用 adb 工具时都需要进入 adb 工具文件夹内，并右键打开 PowerShell 窗口
+> 这种方法的弊端在于每次需要使用 adb 工具时都需要进入 adb 工具文件夹内，并右键打开 PowerShell 窗口。
 
 ### 使用解锁命令解锁
 
 解锁 Bootloader 是在 Fastboot 模式下进行的，所以，我们需要重启到 <span id="Fastboot">Fastboot 模式<span>，在这里我也介绍两种方法：
 
-**方法一（建议）**： 在关机状态下，同时长按电源键和音量上键，即可进入 Fastboot 模式；
+**方法一（建议）**： 在关机状态下，同时长按电源键和音量上键，即可进入 Fastboot 模式。
 
 **方法二**： 首先，要开启开发者选项，开启开发者选项的方法[在这里](#DeveloperMode)，然后，进入开发者选项，开启 **“USB 调试”** 功能，如下图所示：
 
@@ -156,9 +156,9 @@
 
     adb reboot bootloader
 
-回车，等待一段时间，即可将手机重启至 Fastboot 模式
+回车，等待一段时间，即可将手机重启至 Fastboot 模式。
 
-> 进入 Fastboot 的明显特征是屏幕上有红色的 **_Fastboot Mode_** 提示，并且使用音量增减键可以切换要执行的操作（关机，重启，进入恢复模式等）
+> 进入 Fastboot 的明显特征是屏幕上有红色的 **_Fastboot Mode_** 提示，并且使用音量增减键可以切换要执行的操作（关机，重启，进入恢复模式等）。
 
 好了，使用以上任一方法进入 Fastboot 之后，回到我们的命令行窗口，键入：
 
@@ -176,9 +176,9 @@
 - **注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）**
 - **注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）**
 
-回车，此时根据提示，在手机上完成解锁 Bootloader 的操作（使用音量键选择是否确定解锁（选择 **Yes** 项）（如果反悔，不想解锁，或是想保护数据，选择 **No** 项），使用电源键确认选项）
+回车，此时根据提示，在手机上完成解锁 Bootloader 的操作（使用音量键选择是否确定解锁（选择 **Yes** 项即为确认解锁）（如果反悔，不想解锁，或是想保护数据，选择 **No** 项即可取消解锁进程），使用电源键确认选项）
 
-大功告成，现在你已经完成了搞机的第一步：解锁 Bootloader 了，现在，你可以歇一歇，欣赏一下开机时的已解锁 Bootloader 的提示。
+大功告成，现在你已经完成了搞机的第一步：解锁 Bootloader 了。
 
 ## 二，打包 Boot，使用 MagiskRoot
 
@@ -186,12 +186,12 @@
 
 ### 提取 Boot
 
-既然我们已经解锁了 Bootloader ，那就意味着我们可以对 `Boot` 分区进行修改啦！那我们首先得把 Boot.img 文件提取出来，Boot.img 文件是在 Payload.bin 的解压文件里面，而 Payload.bin 则可以通过解压固件包获得，也就是说，我们需要：
+既然我们已经解锁了 Bootloader ，那就意味着我们可以对 `Boot` 分区进行修改啦！那我们首先得把 Boot.img 文件提取出来，Boot.img 文件是在 **Payload.bin** 的解压文件里面，而 **Payload.bin** 则可以通过解压固件包获得，也就是说，我们需要：
 
-1. 解压固件包获得 Payload.bin 文件
-2. 解压 Payload.bin 文件获得 Boot.img 文件
+1. 解压固件包获得 Payload.bin 文件、
+2. 解压 Payload.bin 文件获得 Boot.img 文件。
 
-那么这样，我们就可以成功提取 Boot.img 文件啦
+那么这样，我们就可以成功提取 Boot.img 文件啦！
 
 这里，我使用一加官方氧固件包 11.0.4.4 进行演示：
 
@@ -207,7 +207,7 @@
 
 ![解压错误](assets/屏幕截图%202021-02-08%20144541.png)
 
-出现了 `有效数据包含额外数据` 的警告，这个警告是怎么回事呢，其实我也不知道，那么在这里我们需要用到一个工具：**Payload Dumper** ，所谓 Payload Dumper，就是专门解压 Payload.bin 的工具啦！在下面的链接可以下载：
+出现了 `有效数据包含额外数据` 的警告，这个警告是怎么回事呢？其实我也不知道。那么在这里我们需要用到一个工具：**Payload Dumper** ，所谓 Payload Dumper，就是专门解压 Payload.bin 的工具啦！在下面的链接可以下载：
 
 - [Android File Host](https://androidfilehost.com/?fid=818070582850510260)
 - [蓝奏云](https://jerrywn.lanzous.com/isZxKlh0yli)
@@ -218,21 +218,21 @@
 
 还记得我们解压固件包得到的 **Payload.bin** 文件吗？在这里：
 
-- `payload_input` 就是存放 Payload.bin 文件的地方，
+- `payload_input` 就是存放 Payload.bin 文件的地方；
 - `payload_output` 就是解压 Payload.bin 文件后的解压文件存放的地方。
 
 那么把 Payload.bin 文件放进 `payload_input` 文件夹里面，双击 `payload_dumper.exe` 就可以把 Boot.img 解压出来啦！
 
 所以步骤是：
 
-1. 把 Payload.bin 粘贴至 `payload_input` 文件夹里面；
-2. 双击 `payload_dumper.exe` 等待解压完成；
+1. 把 Payload.bin 粘贴至 `payload_input` 文件夹里面、
+2. 双击 `payload_dumper.exe` 等待解压完成、
 
    > 在这一步，其实不用等待整个 Payload.bin 文件解压完毕，除非你需要除 Boot.img 之外的其他 img 文件，只要出现 Boot 字样，并且 Boot 字样下面还有除零之外的任意个其它内容，即可关闭窗口以结束解压进程，如下图所示：
    >
    > ![提前结束](assets/屏幕截图%202021-02-08%20164837.png)
    >
-   > 此时整个 Payload.bin 文件并未解压完毕，也可以关闭窗口
+   > 此时整个 Payload.bin 文件并未解压完毕，也可以关闭窗口。
 
 3. 在 `payload_output` 文件夹里面即可找到 Boot.img 。
 
@@ -240,7 +240,7 @@
 
 ### 使用 Magisk Patch Boot
 
-Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手机上安装 Magisk 应用，把电脑上解压出来的 Boot.img 文件传输到手机上，打开 Magisk ，选择上面的 `“安装”` ，注意一定是 **上面** 的安装按钮，也就是 `Magisk` 的按钮，而不是 `Manager` 的按钮，如下图所示（界面可能因为版本或安装与否而不同）：
+Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手机上安装 Magisk 应用，把电脑上解压出来的 Boot.img 文件传输到手机上，打开 Magisk ，选择上面的 `**安装**` ，注意一定是 **上面** 的安装按钮，也就是 `**Magisk**` 的按钮，而不是 `**Manager**` 的按钮，如下图所示（界面可能因为版本或安装与否而不同）：
 
 ![安装按钮](assets/Screenshot_20210208-170522_Magisk_Manager.png)
 
@@ -264,11 +264,11 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 那么接下来，我们就要把打包好的 **magisk_patched_xxx.img** 刷入系统的 `Boot` 分区，来获得 Root 权限。
 
-首先，要[进入 Fastboot 模式](#Fastboot)，输入：
+首先，要进入 Fastboot 模式，方法在[这里](#Fastboot)，输入：
 
     fastboot flash boot <magisk_patched_xxx.img所在位置>
 
-这个\< magisk_patched_xxx.img 所在位置 >需特别注意，假设，我的已打包的 Boot 文件名字为：`magisk_patched_abc.img` ，存放在 D 盘根目录下面，那么命令是这样：
+这个 **\< magisk_patched_xxx.img 所在位置 >** 需特别注意，假设，我的已打包的 Boot 文件名字为：`magisk_patched_abc.img` ，存放在 D 盘根目录下面，那么命令是这样：
 
     fastboot flash boot D:\magisk_patched_abc.img
 
@@ -278,21 +278,21 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 > 注意 boot 后面有个空格，为方便显示，我这里用 <空格> 进行代替，结合前面的示例应该容易理解
 
-然后，找到复制到电脑上的 **Magisk 打包过的 magisk_patched_xxx.img 文件**，将其用鼠标拖进命令行窗口里面，此时会自动输入拖进去的文件的绝对路径，省去了输入路径的操作
+然后，找到复制到电脑上的 **Magisk 打包好的 magisk_patched_xxx.img 文件**，将其用鼠标拖进命令行窗口里面，此时会自动输入拖进去的文件的绝对路径，省去了输入路径的操作。
 
-命令输入完毕后，回车，等待一段时间即可刷入 Boot.img 文件到设备的 Boot 分区内，窗口会显示刷入所用时间等等，刷入完毕后输入：
+命令输入完毕后，回车，等待一段时间即可刷入打包好的 magisk_patched_xxx.img 文件到设备的 Boot 分区内，窗口会显示刷入所用时间等等，刷入完毕后输入：
 
     fastboot reboot
 
-回车即可进入系统，或者在手机上用音量键选择 **START** 一项，按电源键确认，也可以重启系统
+回车即可进入系统，或者在手机上用音量键选择 **START** 一项，按电源键确认，也可以重启系统。
 
 大功告成，在手机上安装 MagiskManager 即可管理 Root 权限了。
 
 ## 三，备份指纹分区
 
-- 强烈建议：此步骤不要跳过
-- 强烈建议：此步骤不要跳过
-- 强烈建议：此步骤不要跳过
+- **强烈建议：此步骤不要跳过**
+- **强烈建议：此步骤不要跳过**
+- **强烈建议：此步骤不要跳过**
 
 一加 8 手机在某些情况下，比如在高通 EDL 模式（9008）过后，**可能** 会出现指纹模块失效的情况，此时无法录入指纹，只能通过备份的指纹分区来解决，所以，我们应该备份指纹分区，有必要的可以将其上传到云端存储器上，比如百度网盘。
 
@@ -312,10 +312,11 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
     dd if=/dev/block/bootdevice/by-name/persist of=/sdcard/persist.img
 
-> 这条命令的用处就是在 `/dev/block/bootdevice/by-name` 里面找到 persist 文件，复制一份到 `/sdcard/` 也就是内部存储根目录并命名为 persist.img
+> 这条命令的用处就是在 `/dev/block/bootdevice/by-name` 里面找到 persist 文件，复制一份到 `/sdcard/` 也就是内部存储根目录并命名为 persist.img 。
 
 回车，稍侯片刻，出现总执行时间的提示则表示备份完成，此时，即可在手机**内部存储根目录**下找到备份好的 persist.img 文件：
 
 ![备份完成](assets/Screenshot_20210209-140314_文件极客.png)
 
 好了，此时指纹分区已经备份完成，你可以将其上传到云端存储或保存至本地硬盘以确保不会丢失，以后如果真的遇到了指纹模块不能使用的情况，可以使用这次备份出来的 persist.img 文件恢复指纹分区，具体操作我也不知道 😅。
+
