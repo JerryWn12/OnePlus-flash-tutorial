@@ -105,7 +105,7 @@
 
 然后我们需要对 **_环境变量_** 进行配置：Windows10 系统中，使用快捷键 `Windows + S` 打开搜索工具，键入 `path` 点击最佳匹配中的 **“编辑系统环境变量”** ，如下图所示：
 
-![搜索](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ7lSa2VWAfWGJVNp.uX.w7o1d8ShvrOC4sHIsDkLkUOBNw2.IaPdNPcfQhbXYfCYY4!/r)
+![搜索](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcdRBCa1DxzpqhIFn3sYiAnudZHkMISdryF8HH22M6JMML8UP5ieU2xII6qo17OvkbnuNVkFiXU0gODZYVT0XD9w!/r)
 
 在打开的窗口中选择 **“环境变量”** 一项，再找到下面那栏系统变量中的变量名为 **Path** 的项，如下图所示：
 
@@ -113,7 +113,7 @@
 
 双击这个 **Path** 项，在打开的窗口中点击右侧的 **新建** ，然后在输入框中粘贴刚刚复制的文件夹地址，点击确定，如下图所示：
 
-![新建Path项](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcdRBCa1DxzpqhIFn3sYiAnt*v5lGR0mCaZxqa41ih8RJ49RBj0fQd2zHboKTzrSSeYGs*9xxC6ZXOLQ9z3YjY5o!/r)
+![新建Path项](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcdRBCa1DxzpqhIFn3sYiAnt*v5lGR0mCaZxqa41ih8RJ49RBj0fQd2zHboKTzrSSeXNoOJ2Q.Q7njBj6fuCM3ys!/r)
 
 此时环境变量搭建完成。
 
@@ -137,7 +137,7 @@
 
 <span id="Use-Now">在解压后的文件夹里面</span>，按住 **Shift** 键在文件夹内空白处右键，菜单里面就会增加 **“在此处打开 PowerShell 窗口”** 一项，如下图所示：
 
-![右键菜单](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcXveMfGdv0SGX8tmIpKc5wYwSYI3A2zGMio6SDjqSbLT2CtuTJ4NarH7DP.e8*S8b7GqwBpafCVJHT2C7ScD9cw!/r)
+![右键菜单](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcXveMfGdv0SGX8tmIpKc5wYwSYI3A2zGMio6SDjqSbLT2CtuTJ4NarH7DP.e8*S8b2XeHkQWLS.4KsFmE7dNOQo!/r)
 
 选择此项，即可打开命令行窗口，同样地，键入：
 
@@ -187,7 +187,7 @@
 
 回车，此时应出现设备编号：
 
-![Fastboot检验](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcTEVXpEFWnelDRDmHgCvEWxBOxAhnLQFSbkdCdJjvOYdRTftPNYHuRP6AI0ha5dWTngAXCPPaywJDRYi1vBldpQ!/r)
+![Fastboot检验](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcTEVXpEFWnelDRDmHgCvEWxBOxAhnLQFSbkdCdJjvOYdRTftPNYHuRP6AI0ha5dWTvtn.OZz8ELIAD2cpQ.MZ1E!/r)
 
 再次输入：
 
@@ -337,7 +337,7 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 回车，稍侯片刻，出现总执行时间的提示则表示备份完成，此时，即可在手机**内部存储根目录**下找到备份好的 persist.img 文件：
 
-![备份完成](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ6I*oQhqNYF6ZsnZjjbiDW7UvNzot*o4X7Jd*O*4PAcbbIkF4b4kfNhV1voBavr818!/r)
+![备份完成](http://r.photo.store.qq.com/psc?/V51p97on2utajh0noHVy4YXk1C1gPst5/45NBuzDIW489QBoVep5mcfyB7XasNoGira*f2BycBQ6I*oQhqNYF6ZsnZjjbiDW7UvNzot*o4X7Jd*O*4PAcba63dKBVx4pLio4GDkhkjAE!/r)
 
 好了，此时指纹分区已经备份完成，你可以将其上传到云端存储或保存至本地硬盘以确保不会丢失，以后如果真的遇到了指纹模块不能使用的情况，可以使用这次备份出来的 persist.img 文件恢复指纹分区，具体操作我也不知道 😅。
 
