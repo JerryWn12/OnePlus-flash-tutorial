@@ -201,7 +201,7 @@
 
 大功告成，现在你已经完成了搞机的第一步：解锁 Bootloader 了。
 
-## 二，打包 Boot，使用 MagiskRoot
+## <span id="MagiskRoot">二，打包 Boot，使用 MagiskRoot</span>
 
 \* 此阶段可选，若会打包 Boot 后刷入以使用 Magisk 则可跳过此步，到 [**第三步：备份指纹分区**](#三，备份指纹分区) 。
 
