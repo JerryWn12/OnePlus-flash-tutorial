@@ -36,7 +36,7 @@
 ## <span id="Unlock-BL">一，解锁 Bootloader</span>
 
 \* 此阶段可选，若已经解锁 Bootloader 则可跳过此步，到
-[**第二步：打包 Boot，使用 MagiskRoot**](#二，打包-Boot，使用-MagiskRoot) 。已解锁 Bootloader 的明显特征是手机在开机时会有设备已解锁的提示。
+[**第二步：打包 Boot，使用 MagiskRoot**](#MagiskRoot) 。已解锁 Bootloader 的明显特征是手机在开机时会有设备已解锁的提示。
 
 - **注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）**
 - **注意：解锁 Bootloader 会清除所有数据！包括图片，音乐，应用等等（不包括系统）**
@@ -64,7 +64,7 @@
 
 首先，我们要打开手机上的 **OEM 解锁** 选项来允许 Bootloader 可以被解锁，步骤如下：
 
-1. <span id="DeveloperMode">进入设置-关于手机</span>，连续点击版本号，直到出现 **“处于开发者模式”** 或之类的提示（可能会要求输入 PIN，即锁屏密码）；
+1. 进入设置-关于手机，连续点击版本号，直到出现 **“处于开发者模式”** 或之类的提示（可能会要求输入 PIN，即锁屏密码）；
 2. 然后，进入设置-系统-开发者选项，找到 **OEM 解锁** （ 也可以直接在设置里面搜索 “OEM 解锁” ），将其打开。
 
 那么我们要如何解锁 Bootloader 呢？其实只需要一条命令就行啦：
@@ -157,7 +157,7 @@
 
 **方法一（建议）**： 在关机状态下，同时长按电源键和音量上键，即可进入 Fastboot 模式。
 
-**方法二**： 首先，要开启开发者选项，开启开发者选项的方法[在这里](#DeveloperMode)，然后，进入开发者选项，开启 **“USB 调试”** 功能，如下图所示：
+**方法二**： 首先，要开启开发者选项里面的 **“USB 调试”** 功能，如下图所示：
 
 ![USB调试](assets/Screenshot_20210208-205441_设置.png)
 
@@ -203,7 +203,7 @@
 
 ## <span id="MagiskRoot">二，打包 Boot，使用 MagiskRoot</span>
 
-\* 此阶段可选，若会打包 Boot 后刷入以使用 Magisk 则可跳过此步，到 [**第三步：备份指纹分区**](#三，备份指纹分区) 。
+\* 此阶段可选，若会打包 Boot 刷入来使用 Magisk 则可跳过此步，到 [**第三步：备份指纹分区**](#Backup-Persist) 。
 
 ### 提取 Boot
 
@@ -367,7 +367,7 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 
 ![PowerShell](assets/屏幕截图%202021-02-09%20221301.png)
 
-将手机[重启至 Fastboot 模式](#Fastboot)后连接电脑，复制以下命令：
+将手机[重启至 Fastboot 模式](#Fastboot)后连接电脑，复制以下命令至命令行窗口：
 
     fastboot flash recovery recovery.img
     fastboot reboot fastboot
@@ -386,4 +386,4 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 1. 在命令行输入 `fastboot reboot recovery` 回车，此时手机进入 recovery （恢复）模式；
 2. 在手机上点击 `Enter recovery` ，然后点击 `Factory reset` 进行格式化，完毕后点击带有 `Reboot system` 字样的按钮即可开机。
 
-此时 Havoc OS 成功安装，要想安装 Magisk 则可以通过上面提到的：[二，打包 Boot，使用 MagiskRoot](#二，打包-Boot，使用-MagiskRoot)来安装 Magisk。
+此时 Havoc OS 成功安装，要想安装 Magisk 则可以通过上面提到的：[二，打包 Boot，使用 MagiskRoot](#MagiskRoot)来安装 Magisk。
