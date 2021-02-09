@@ -63,7 +63,7 @@
 
 ### 搭建 adb 工具
 
-那么，我们应该到哪里输入命令？那么这时候就要介绍一个谷歌官方的 _Android SDK Platform-Tools_ 啦！这也是我们俗称的 **adb** 工具，里面集成了 **adb** 和 **fastboot** 命令，点击下面的任一链接即可下载
+那么，我们应该到哪里输入命令？那么这时候就要介绍一个谷歌官方的 **_Android SDK Platform-Tools_** 啦！这也是我们俗称的 **adb 工具**，里面集成了 **adb** 和 **fastboot** 命令，点击下面的任一链接即可下载
 
 - [官方链接](https://developer.android.com/studio/releases/platform-tools)
 - [蓝奏云](https://jerrywn.lanzous.com/iA9jLlfseyh)
