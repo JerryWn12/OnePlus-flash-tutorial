@@ -8,14 +8,14 @@
 
 [一，解锁 Bootloader](#Unlock-BL)
 
-- [搭建 adb 工具](#搭建-adb-工具)
-- [使用解锁命令解锁](#使用解锁命令解锁)
+1. [搭建 adb 工具](#搭建-adb-工具)
+2. [使用解锁命令解锁](#使用解锁命令解锁)
 
 [二，打包 Boot，使用 MagiskRoot](#MagiskRoot)
 
-- [提取 Boot](#提取-Boot)
-- [使用 Magisk Patch Boot](#使用-Magisk-Patch-Boot)
-- [刷入已打包的 Boot](#刷入已打包的-Boot)
+1. [提取 Boot](#提取-Boot)
+2. [使用 Magisk Patch Boot](#使用-Magisk-Patch-Boot)
+3. [刷入已打包的 Boot](#刷入已打包的-Boot)
 
 [三，备份指纹分区](#Backup-Persist)
 
@@ -386,4 +386,4 @@ Boot.img 文件提取出来了，接下来我们就要打包 Boot 啦！在手�
 1. 在命令行输入 `fastboot reboot recovery` 回车，此时手机进入 recovery （恢复）模式；
 2. 在手机上点击 `Enter recovery` ，然后点击 `Factory reset` 进行格式化，完毕后点击带有 `Reboot system` 字样的按钮即可开机。
 
-此时 Havoc OS 成功安装，想安装 Magisk 则可以通过上面提到的：[二，打包 Boot，使用 MagiskRoot](#MagiskRoot)来安装 Magisk。
+此时 Havoc OS 成功安装，想安装 Magisk 则可以通过上面提到的：[二，打包 Boot，使用 MagiskRoot](#MagiskRoot) 来安装 Magisk。
