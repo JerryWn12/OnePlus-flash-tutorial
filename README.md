@@ -17,9 +17,9 @@
 - [使用 Magisk Patch Boot](#使用-Magisk-Patch-Boot)
 - [刷入已打包的 Boot](#刷入已打包的-Boot)
 
-[备份指纹分区](#Backup-Persist)
+[三，备份指纹分区](#Backup-Persist)
 
-[刷入自定义 ROM](#CustomRom)
+[四，刷入自定义 ROM](#CustomRom)
 
 ## 注意事项
 
